@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lover Lounge — Chain Growth Timelapse</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="header">
+  <h1>💕 Lover Lounge</h1>
+  <div id="controls">
+    <div id="year-selector"></div>
+    <button id="btn-play" class="active">▶ Play</button>
+    <button id="btn-reset">⏮ Reset</button>
+    <div id="speed-controls">
+      <button data-speed="1" class="active">1×</button>
+      <button data-speed="1.5">1.5×</button>
+      <button data-speed="2">2×</button>
+      <button data-speed="4">4×</button>
+      <button data-speed="8">8×</button>
+    </div>
+    <div id="progress-bar"><div id="progress-fill"></div></div>
+    <span id="stats">0 / 0</span>
+    <span id="timestamp"></span>
+  </div>
+</div>
+
+<div id="tooltip"></div>
+<div id="leaderboard"><h2>🏆 Chain Leaderboard</h2><div id="lb-entries"></div></div>
+<svg id="canvas"></svg>
+
+<div id="loading">Loading data...</div>
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
