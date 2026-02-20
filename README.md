@@ -12,11 +12,20 @@ This visualization replays the chain growth as an animated timelapse: watch chai
 
 ## Features
 
-- 🎬 Animated timelapse of chain growth with smooth transitions
+### 🌳 Tree View
+- 🎬 Animated timelapse of chain growth with smooth D3.js tree transitions
+- 🔍 Zoom and pan with mouse, auto-follow newest node
+- 🏷️ Active chain highlighted in leaderboard with leader name label
+
+### 🏁 Bar Chart Race View
+- 📊 Dynamic horizontal bar chart showing chain sizes over time
+- 🏃 Bars reorder smoothly as chains overtake each other
+- ✨ Active chain highlighted with `+ username` label showing who just joined
+
+### Common
 - 🏆 Live leaderboard showing chain sizes as they grow
 - 🎨 Color-coded chains for easy identification
 - ⏯️ Playback controls: play/pause, speed (1×–8×), scrub, step through
-- 🔍 Zoom and pan with mouse, auto-follow newest node
 - 📅 Multi-year support: switch between events with the year selector
 - 💻 Fully client-side — no server needed
 

@@ -12,6 +12,10 @@
   <h1>💕 Lover Lounge</h1>
   <div id="controls">
     <div id="year-selector"></div>
+    <div id="view-toggle">
+      <button data-view="tree" class="active">🌳 Tree</button>
+      <button data-view="race">🏁 Race</button>
+    </div>
     <button id="btn-play" class="active">▶ Play</button>
     <button id="btn-reset">⏮ Reset</button>
     <div id="speed-controls">
@@ -28,8 +32,18 @@
 </div>
 
 <div id="tooltip"></div>
-<div id="leaderboard"><h2>🏆 Chain Leaderboard</h2><div id="lb-entries"></div></div>
+<div id="leaderboard">
+  <div id="lb-header"><h2>🏆 Chain Leaderboard</h2><button id="lb-toggle">▼</button></div>
+  <div id="lb-entries"></div>
+</div>
 <svg id="canvas"></svg>
+<div id="race-container">
+  <div id="race-header">
+    <span id="race-title">Chain Leaderboard</span>
+    <span id="race-counter">0 members</span>
+  </div>
+  <svg id="race-canvas"></svg>
+</div>
 
 <div id="loading">Loading data...</div>
 

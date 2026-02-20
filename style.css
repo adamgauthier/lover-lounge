@@ -55,9 +55,35 @@ svg { display: block; }
   border-left: 1px solid #333;
   overflow-y: auto; padding: 16px;
 }
-#leaderboard h2 {
-  font-size: 15px; color: #E8B4B8; margin-bottom: 12px;
+#lb-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+#lb-header h2 {
+  font-size: 15px; color: #E8B4B8; margin: 0;
   text-transform: uppercase; letter-spacing: 1px;
+}
+#lb-toggle {
+  display: none;
+  background: #333; color: #ccc; border: 1px solid #555; border-radius: 6px;
+  padding: 4px 10px; cursor: pointer; font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  #header { padding: 8px 12px; gap: 8px; flex-wrap: wrap; }
+  #header h1 { font-size: 15px; }
+  #controls { gap: 6px; flex-wrap: wrap; }
+  #controls button, #year-selector select { padding: 4px 8px; font-size: 12px; }
+  #speed-controls button { padding: 3px 6px; font-size: 11px; }
+  #stats, #timestamp { font-size: 11px; }
+
+  #leaderboard {
+    position: fixed; top: auto; bottom: 0; left: 0; right: 0;
+    width: 100%; height: auto; max-height: 45vh;
+    border-left: none; border-top: 1px solid #333;
+    padding: 10px 14px;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+  }
+  #leaderboard.collapsed { max-height: 42px; padding-bottom: 0; overflow: hidden; }
+  #leaderboard.collapsed #lb-entries { display: none; }
+  #lb-toggle { display: block; }
 }
 .lb-entry {
   display: flex; align-items: center; gap: 10px;
@@ -82,3 +108,52 @@ svg { display: block; }
   display: none;
 }
 #loading.visible { display: block; }
+
+#view-toggle { display: flex; gap: 4px; }
+#view-toggle button { padding: 4px 10px; font-size: 12px; }
+
+#race-container {
+  display: none;
+  position: fixed; left: 0; right: 0; bottom: 0;
+  background: #1a1a1a;
+}
+#race-container.visible { display: block; }
+
+#race-header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 24px 48px 0;
+}
+#race-title {
+  font-size: 28px; font-weight: bold; color: #E8B4B8;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+#race-counter {
+  font-size: 48px; font-weight: bold; color: rgba(232,180,184,0.3);
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+#race-canvas { display: block; width: 100%; }
+
+.race-bar-label {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  fill: #888;
+  transition: font-size 0.3s;
+}
+.race-bar-count {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-weight: bold;
+  font-size: 13px;
+  fill: #ccc;
+}
+.race-bar-new {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 12px;
+  fill: rgba(255,255,255,0.5);
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  #race-header { display: none; }
+}
